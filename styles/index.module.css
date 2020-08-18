@@ -1,0 +1,14 @@
+.pageContainer {
+  display: flex;
+}
+
+.textBody {
+  width: 50%;
+  padding-left: 100px;
+  padding-top: 250px;
+}
+
+.homeImage {
+  height: 100vh;
+}
+  

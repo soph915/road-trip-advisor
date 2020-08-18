@@ -45,6 +45,6 @@ Deploy it to the cloud with [Vercel](https://vercel.com/import?filter=next.js&ut
 
 ### Static Export
 
-If you wish to export a static HTML + JS version of the site you need to first change the setting in this example in `./pages/[username].js` where `getStaticPaths` has `fallback: true` - this needs to be `false` for static export to work. You can then run `npm run build` and `npm run export` to export the site as a static folder in `./out` directory.
+If you wish to export a static HTML + JS version of the site you need to first change the setting in this example in `./pages/[id].js` where `getStaticPaths` has `fallback: true` - this needs to be `false` for static export to work. You can then run `npm run build` and `npm run export` to export the site as a static folder in `./out` directory.
 
 [Read more about fallback option](https://nextjs.org/docs/basic-features/data-fetching#the-fallback-key-required)

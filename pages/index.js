@@ -1,32 +1,32 @@
+import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import indexStyles from '../styles/index.module.css'
 
-import queryGraphql from '../shared/query-graphql'
-
-export default function UserListing({ users }) {
+export default function Home({ allTripsData }) {
   return (
-    <div>
-      <h1>User Listing</h1>
-      <ul>
-        {users.map((user) => (
-          <li key={user.username}>
-            <Link href="/[username]" as={`/${user.username}`}>
-              <a>{user.name}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    // <Layout>
+      <div className={indexStyles.pageContainer}>
+        <div className={indexStyles.textBody}>
+          <h2 className={utilStyles.headingLg}>Road Trip Advisor</h2>
+          <div>Want to take a road trip?</div>
+          <section className={utilStyles.headingMd}>Click one of the options below to start planning!</section>
+          <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+            <button>
+              <Link href="explore">
+                Explore
+              </Link>
+            </button>
+            <button>
+              <Link href="create">
+                Create
+              </Link>
+            </button>
+          </section>
+        </div>
+        <div>
+          <img src="https://media.cntraveler.com/photos/5edfc029b16364ea435ca862/4:5/w_1600,h_2000,c_limit/Roadtrip-2020-GettyImages-1151192650.jpg" className={indexStyles.homeImage}></img>
+        </div>
+      </div>
+    // </Layout> 
   )
-}
-
-export async function getStaticProps() {
-  const { users } = await queryGraphql(`
-    query {
-      users {
-        name
-        username
-      }
-    }
-  `)
-  return { props: { users } }
 }

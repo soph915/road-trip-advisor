@@ -2,26 +2,26 @@ import { ApolloServer, gql, makeExecutableSchema } from 'apollo-server-micro'
 
 const typeDefs = gql`
   type Query {
-    users: [User!]!
-    user(username: String): User
+    trips: [trip!]!
+    trip(id: String): trip
   }
-  type User {
+  type trip {
     name: String
-    username: String
+    id: String
   }
 `
-const users = [
-  { name: 'Leeroy Jenkins', username: 'leeroy' },
-  { name: 'Foo Bar', username: 'foobar' },
+const trips = [
+  { name: 'Pacific Coast Highway', id: 'pacific-coast-highway' },
+  { name: 'Utah Mighty 5', id: 'utah-mighty-five' },
 ]
 
 const resolvers = {
   Query: {
-    users() {
-      return users
+    trips() {
+      return trips
     },
-    user(parent, { username }) {
-      return users.find((user) => user.username === username)
+    trip(parent, { id }) {
+      return trips.find((trip) => trip.id === id)
     },
   },
 }
