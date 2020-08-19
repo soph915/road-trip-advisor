@@ -4,7 +4,7 @@ const trips = [
       name: "Classic Maine",
       id: 'classic-maine',
       imageUrl: 'https://goop.com/wp-content/uploads/2016/07/maine-kennebunk2.jpg',
-      region: "northeast",
+      region: "Northeast",
       stops: [
         {
           'name':'Portland',
@@ -25,7 +25,7 @@ const trips = [
       name: "Pacific Coast Highway",
       id: 'pacific-coast-highway',
       imageUrl: 'https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=1600&h=838&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2015%2F08%2FPCH0815-brixy-bridge.jpg',
-      region: "west",
+      region: "West",
       stops: [
         {
           'name':'San Diego',
@@ -64,14 +64,14 @@ const trips = [
           'description': 'The most popular national park in the US!',
         }
       ],
-      region: "southeast",
+      region: "Southeast",
     },
     {
       description: 'Discover epic adventures and scores of stunning spots across The Mighty 5 and the state parks and national monuments in-between on this ultimate itinerary.',
       name: "Utah Mighty 5",
       id: 'utah-mighty-five',
       imageUrl: 'https://s27363.pcdn.co/wp-content/uploads/2020/05/Mighty-5-Itinerary.jpg.optimal.jpg',
-      region: "west",
+      region: "West",
       stops: [
         {
           'name':'Zion National Park',
@@ -101,7 +101,7 @@ const trips = [
       id: 'miam-key-west',
       imageUrl: 'https://www.gettingstamped.com/wp-content/uploads/2019/09/Florida-Keys-Road-Trip-Guide-Miami-to-Key-West-by-Car-800x450.jpg',
       stops: ['Portland', 'Acadia National Park'],
-      region: "southeast",
+      region: "Southeast",
       stops: [
         {
           'name':'Miami',
@@ -118,7 +118,7 @@ const trips = [
       name: "American Rockies",
       id: 'american-rockies',
       imageUrl: 'https://ewscripps.brightspotcdn.com/dims4/default/7e9d9f3/2147483647/strip/true/crop/640x360+0+0/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.thedenverchannel.com%2Fphoto%2F2015%2F07%2F02%2FRMNP%20035_1435880984758_20715445_ver1.0_640_480.jpg',
-      region: "west",
+      region: "West",
       stops: [
         {
           'name':'Rocky Mountain National Park',
