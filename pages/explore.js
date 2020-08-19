@@ -20,7 +20,6 @@ export default function Explore({ trips }) {
                   key={trip.id}
                   id={trip.id} 
                   name={trip.name} 
-                  // stops={trip.stops} 
                   region={trip.region} 
                   imageUrl={trip.imageUrl}
                 />
@@ -40,7 +39,6 @@ export async function getStaticProps() {
         name
         id
         region
-        description
         imageUrl
       }
     }
