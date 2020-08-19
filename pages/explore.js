@@ -1,5 +1,4 @@
 import Link from 'next/link'
-
 import queryGraphql from '../shared/query-graphql'
 
 export default function tripListing({ trips }) {
@@ -9,7 +8,7 @@ export default function tripListing({ trips }) {
       <ul>
         {trips.map((trip) => (
           <li key={trip.id}>
-            <Link href="/[id]" as={`/${trip.id}`}>
+            <Link href="/trips/[id]" as={`/trips/${trip.id}`}>
               <a>{trip.name}</a>
             </Link>
           </li>

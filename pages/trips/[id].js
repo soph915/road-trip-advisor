@@ -1,4 +1,4 @@
-import queryGraphql from '../shared/query-graphql'
+import queryGraphql from '../../shared/query-graphql'
 
 export default function tripProfile({ trip }) {
   if (!trip) {
