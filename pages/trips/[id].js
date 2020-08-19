@@ -1,13 +1,23 @@
 import queryGraphql from '../../shared/query-graphql'
+import utilStyles from '../../styles/utils.module.css'
+import Layout from '../../components/layout'
+
 
 export default function tripProfile({ trip }) {
   if (!trip) {
     return <h1>trip Not Found</h1>
   }
   return (
-    <h1>
-      {trip.id} is {trip.name}
-    </h1>
+    <Layout>
+      <div className={utilStyles.tripImage}><img src={trip.imageUrl}></img></div>
+      <article>
+        <h1 className={utilStyles.headingXl}>{trip.name}</h1>
+        <div className={utilStyles.lightText}>
+          Stops: {trip.stops}
+        </div>
+        <div>{trip.description}</div>
+      </article>
+    </Layout>
   )
 }
 
@@ -20,6 +30,8 @@ export async function getStaticProps(context) {
       trip(id: $id) {
         name
         id
+        description
+        imageUrl
       }
     }
   `,
