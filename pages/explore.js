@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 
 export default function Explore({ trips }) {
   return (
-    <Layout>
+    <Layout home>
       <Head>        
         <title>Explore</title>
       </Head>
