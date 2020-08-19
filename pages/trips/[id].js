@@ -13,9 +13,14 @@ export default function tripProfile({ trip }) {
       <article>
         <h1 className={utilStyles.headingXl}>{trip.name}</h1>
         <div className={utilStyles.lightText}>
-          Stops: {trip.stops}
+          Number of Stops: {trip.stops.length}
         </div>
         <div>{trip.description}</div>
+        <ul>
+          {trip.stops.map((stop) => (
+            <li>{stop.name} - {stop.description}</li>
+          ))}
+        </ul>
       </article>
     </Layout>
   )
@@ -32,6 +37,10 @@ export async function getStaticProps(context) {
         id
         description
         imageUrl
+        stops {
+          name
+          description
+        }
       }
     }
   `,

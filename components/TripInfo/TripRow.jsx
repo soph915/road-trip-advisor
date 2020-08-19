@@ -12,8 +12,6 @@ const TripRow = (props) => {
             <div className={utilStyles.listItemCopy}>
                 {props.name}
                 <br />
-                Stops: {props.stops}
-                <br />
                 Region: {props.region}   
             </div>
         </li>

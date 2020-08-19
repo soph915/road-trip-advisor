@@ -1,28 +1,35 @@
 import Link from 'next/link'
 import queryGraphql from '../shared/query-graphql'
 import TripRow from '../components//TripInfo/TripRow'
+import Head from 'next/head'
+import Layout from '../components/layout'
 
-export default function tripListing({ trips }) {
+export default function Explore({ trips }) {
   return (
-    <div>
-      <h1>Explore</h1>
+    <Layout>
+      <Head>        
+        <title>Explore</title>
+      </Head>
       <div>
-        {trips.map((trip) => (
-          <Link href="/trips/[id]" as={`/trips/${trip.id}`}>
-            <div key={trip.id}>
-              <TripRow 
-                key={trip.id}
-                id={trip.id} 
-                name={trip.name} 
-                stops={trip.stops} 
-                region={trip.region} 
-                imageUrl={trip.imageUrl}
-              />
-            </div>
-          </Link>
-        ))}
+        <h1>Explore</h1>
+        <div>
+          {trips.map((trip) => (
+            <Link href="/trips/[id]" as={`/trips/${trip.id}`}>
+              <div key={trip.id}>
+                <TripRow 
+                  key={trip.id}
+                  id={trip.id} 
+                  name={trip.name} 
+                  // stops={trip.stops} 
+                  region={trip.region} 
+                  imageUrl={trip.imageUrl}
+                />
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
@@ -32,7 +39,6 @@ export async function getStaticProps() {
       trips {
         name
         id
-        stops
         region
         description
         imageUrl
