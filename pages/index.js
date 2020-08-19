@@ -15,16 +15,16 @@ export default function Home() {
           <div>Want to take a road trip?</div>
           <section className={utilStyles.headingMd}>Click one of the options below to start planning!</section>
           <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-            <button>
-              <Link href="explore">
+            <Link href="explore">
+              <button>
                 Explore
-              </Link>
-            </button>
-            <button>
-              <Link href="create">
+              </button>
+            </Link>
+            <Link href="create">
+              <button>
                 Create
-              </Link>
-            </button>
+              </button>
+            </Link>
           </section>
         </div>
         <div>
