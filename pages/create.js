@@ -3,20 +3,6 @@ import utilStyles from '../styles/utils.module.css'
 import { useState, useMutation } from 'react';
 // import { gql } from 'apollo-server-micro'
 
-
-// const ADD_TRIP = gql`
-//   mutation AddTrip($name: String, $description: String, $photoUrl: String) {
-//     addTrip(name: $name, deescription: $description, photoUrlL: $photoUrl) {
-//       name
-//       description
-//       photoUrl
-//       region
-//     }
-//   }
-// `;
-// const [addTrip, { data }] = useMutation(ADD_TRIP);
-
-
 export default function Create({ }) {
 
   const [tripInfo, setTripInfo] = useState({
@@ -42,6 +28,18 @@ export default function Create({ }) {
     // setting up apollo client and resolver for this mutation
     // error handling on this page - empty inputs  
     // on mutation completed, some kind of success message / go to newly created trip page
+    // const ADD_TRIP = gql`
+    //   mutation AddTrip($name: String, $description: String, $photoUrl: String) {
+    //     addTrip(name: $name, deescription: $description, photoUrlL: $photoUrl) {
+    //       name
+    //       description
+    //       photoUrl
+    //       region
+    //     }
+    //   }
+    // `;
+    // const [addTrip, { data }] = useMutation(ADD_TRIP);
+
   }
 
   return (
