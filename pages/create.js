@@ -2,6 +2,18 @@ import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { useState } from 'react';
 import Select from 'react-select';
+import { gql, useMutation } from '@apollo/client';
+
+const ADD_TRIP = gql`
+  mutation AddTrip($name: String, $description: String, $photoUrl: String, $region: String) {
+    addTrip(name: $name, deescription: $description, photoUrlL: $photoUrl, region: $region) {
+      name
+      description
+      photoUrl
+      region
+    }
+  }
+`;
 
 export default function Create({ }) {
 
@@ -11,6 +23,8 @@ export default function Create({ }) {
     photoUrl: '',
     region: '',
   });
+
+  const [addTrip, { data }] = useMutation(ADD_TRIP);
 
   const handleChange = e =>
     setTripInfo({ ...tripInfo, [e.target.name]: e.target.value });
@@ -26,11 +40,6 @@ export default function Create({ }) {
     { value: 'Southwest', label: 'Southwest' },
     { value: 'West', label: 'West' },
   ];  
-
-  const saveTrip = () => {
-    let newTrip = tripInfo;
-    // TODO: next steps, would be to set up an apollo client to send this new trip to be created
-  }
 
   return (
     <Layout >
@@ -64,7 +73,11 @@ export default function Create({ }) {
       <div>2. <input></input></div>
       <div>3. <input></input></div>
       <div>4. <input></input></div>
-      <button onClick={() => saveTrip()}><a>Save</a></button>
+      {/* TODO: next steps, would be to set up an apollo client to handle create trip mutation*/}
+      <button 
+        onClick={() => addTrip({ variables: { } })}>
+        Save
+      </button>
     </Layout>
   )
 }
