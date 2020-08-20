@@ -53,6 +53,11 @@ export default function Explore({ trips }) {
           ))}
         </div>
       </div>
+      <div>
+        <Link href="/">
+          <a>← Back to home</a>
+        </Link>
+      </div>
     </Layout>
   )
 }
