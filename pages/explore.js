@@ -4,7 +4,7 @@ import TripRow from '../components/TripRow'
 import Head from 'next/head'
 import Layout from '../components/layout'
 import { useState } from 'react'
-import styles from '../styles/explore.module.css'
+import styles from '../styles/triprow.module.css'
 
 const regions = [
   'All',

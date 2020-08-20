@@ -1,7 +1,6 @@
 import queryGraphql from '../../shared/query-graphql'
 import utilStyles from '../../styles/utils.module.css'
 import Layout from '../../components/layout'
-import styles from '../../styles/tripinfo.module.css'
 
 export default function tripProfile({ trip }) {
   if (!trip) {
