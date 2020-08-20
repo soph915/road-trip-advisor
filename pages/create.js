@@ -1,19 +1,21 @@
 import Layout from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import { useState } from 'react';
-import Select from 'react-select';
-import { gql, useMutation } from '@apollo/client';
+import { useState, useMutation } from 'react';
+// import { gql } from 'apollo-server-micro'
 
-const ADD_TRIP = gql`
-  mutation AddTrip($name: String, $description: String, $photoUrl: String, $region: String) {
-    addTrip(name: $name, deescription: $description, photoUrlL: $photoUrl, region: $region) {
-      name
-      description
-      photoUrl
-      region
-    }
-  }
-`;
+
+// const ADD_TRIP = gql`
+//   mutation AddTrip($name: String, $description: String, $photoUrl: String) {
+//     addTrip(name: $name, deescription: $description, photoUrlL: $photoUrl) {
+//       name
+//       description
+//       photoUrl
+//       region
+//     }
+//   }
+// `;
+// const [addTrip, { data }] = useMutation(ADD_TRIP);
+
 
 export default function Create({ }) {
 
@@ -21,25 +23,26 @@ export default function Create({ }) {
     name: '',
     description: '',
     photoUrl: '',
-    region: '',
+    stops: [],
   });
 
-  const [addTrip, { data }] = useMutation(ADD_TRIP);
-
-  const handleChange = e =>
+  function handleChange(e) {
     setTripInfo({ ...tripInfo, [e.target.name]: e.target.value });
+  }
 
-  const handleRegionSelect = selectedOption => {
-    setTripInfo({ region: selectedOption.value });
-  };
+  function handleStopChange(e) {
+    let copyOfStops = tripInfo.stops;
+    copyOfStops[e.target.name] = e.target.value
+    setTripInfo({ ...tripInfo, stops: copyOfStops })
+  }
 
-  const regionOptions = [
-    { value: 'Midwest', label: 'Midwest' },
-    { value: 'Northeast', label: 'Northeast' },
-    { value: 'Southeast', label: 'Southeast' },
-    { value: 'Southwest', label: 'Southwest' },
-    { value: 'West', label: 'West' },
-  ];  
+  function createTrip(){
+    console.log(tripInfo);
+    //Next steps:
+    // setting up apollo client and resolver for this mutation
+    // error handling on this page - empty inputs  
+    // on mutation completed, some kind of success message / go to newly created trip page
+  }
 
   return (
     <Layout >
@@ -56,26 +59,42 @@ export default function Create({ }) {
           name={'name'}
           onChange={handleChange}
         />
-      <div>Region:</div>
-      <Select
-        value={tripInfo.region}
-        onChange={handleRegionSelect}
-        options={regionOptions}
-      />
-      <div>Photo url:</div>
+      <div>Photo url</div>
         <input
           name={'photoUrl'}
           onChange={handleChange}
-          placeholder={''}
+        />
+      <div>Description</div>
+        <input
+          name={'description'}
+          onChange={handleChange}
         />
       <div>Stops:</div>
-      <div>1. <input></input></div>
-      <div>2. <input></input></div>
-      <div>3. <input></input></div>
-      <div>4. <input></input></div>
-      {/* TODO: next steps, would be to set up an apollo client to handle create trip mutation*/}
-      <button 
-        onClick={() => addTrip({ variables: { } })}>
+      <div>1. 
+        <input 
+          name={0} 
+          onChange={handleStopChange}
+        />
+      </div>
+      <div>2. 
+        <input 
+          name={1} 
+          onChange={handleStopChange}
+        />
+      </div>
+      <div>3. 
+        <input 
+          name={2} 
+          onChange={handleStopChange}
+        />
+      </div>
+      <div>4. 
+        <input 
+          name={3} 
+          onChange={handleStopChange}
+        />
+      </div>
+      <button onClick={createTrip}>
         Save
       </button>
     </Layout>
