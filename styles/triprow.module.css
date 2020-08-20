@@ -1,0 +1,22 @@
+.listItem {
+    cursor: pointer;
+    display: flex;
+    margin: 0 0 1.25rem;
+    width: 100%;
+    transition: .1s ease-in-out;
+    border: 1px solid gray
+  }
+
+  .listItem:hover {
+    transform: scale(1.005);
+    background-color: #f7f7f5;
+  }
+
+  .listItem:active {
+    transform: scale(1.0);
+  }
+
+  .tripName {
+    font-weight: 600;
+    font-size: 20px;
+  }

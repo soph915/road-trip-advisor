@@ -9,19 +9,23 @@ export default function tripProfile({ trip }) {
   }
   return (
     <Layout>
-      <div className={utilStyles.tripImage}><img src={trip.imageUrl}></img></div>
-      <article>
-        <h1 className={utilStyles.headingXl}>{trip.name}</h1>
-        <div className={utilStyles.lightText}>
-          Number of Stops: {trip.stops.length}
+      <div>
+        <div>
+          <div className={utilStyles.tripImage}><img src={trip.imageUrl}></img></div>
+          <h1 className={utilStyles.headingXl}>{trip.name}</h1>
+          <div className={utilStyles.lightText}>
+            Number of Stops: {trip.stops.length}
+          </div>
+          <div>{trip.description}</div>
         </div>
-        <div>{trip.description}</div>
-        <ul>
-          {trip.stops.map((stop) => (
-            <li>{stop.name} - {stop.description}</li>
-          ))}
-        </ul>
-      </article>
+        <div>
+          <ol>
+            {trip.stops.map((stop) => (
+              <li>{stop.name} - {stop.description}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
     </Layout>
   )
 }

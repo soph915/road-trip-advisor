@@ -1,20 +1,23 @@
 import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import styles from '../styles/triprow.module.css'
 
 const TripRow = (props) => {
 
   return (
-    <div>
-      <li className={utilStyles.listItem} key={props.id}>
+    <div className={styles.listItem} key={props.id}>
+      <div>
+          <img src={props.imageUrl} className={utilStyles.listImage}/>
+      </div>
+      <div className={utilStyles.listItemCopy}>
+        <div>
+          <div className={styles.tripName}>{props.name}</div>
           <div>
-              <img src={props.imageUrl} className={utilStyles.listImage}/>
+            Region: {props.region}
+            <br/>
+            Number of stops: {props.numberOfStops}
           </div>
-          <div className={utilStyles.listItemCopy}>
-              {props.name}
-              <br />
-              Region: {props.region}   
-          </div>
-      </li>
+        </div>
+      </div>
     </div>
   );
 

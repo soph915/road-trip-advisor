@@ -20,11 +20,11 @@ export default function Home() {
                 Explore
               </button>
             </Link>
-            <Link href="create">
+            {/* <Link href="create">
               <button>
                 Create
               </button>
-            </Link>
+            </Link> */}
           </section>
         </div>
         <div>
@@ -33,4 +33,3 @@ export default function Home() {
       </div>
     </div>
   )
-}

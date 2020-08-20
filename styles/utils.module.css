@@ -44,11 +44,21 @@
   }
   
   .listItem {
-    margin: 0 0 1.25rem;
+    cursor: pointer;
     display: flex;
+    margin: 0 0 1.25rem;
     width: 100%;
+    transition: .1s ease-in-out;
   }
-  
+
+  .listItem:hover {
+    transform: scale(1.005);
+  }
+
+  .listItem:active {
+    transform: scale(1.0);
+  }
+
   .lightText {
     color: #999;
   }
@@ -58,7 +68,7 @@
   }
 
   .listImage {
-    width: 400px;
+    width: 500px;
     margin-right: 20px;
   }
 

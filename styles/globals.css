@@ -19,6 +19,7 @@ a {
 
 a:hover {
   color: #48827F;
+  cursor: pointer;
 }
 
 img {
@@ -43,5 +44,9 @@ button:hover {
   border: 1px solid #48827F;
   color:#48827F;
   cursor: pointer;
+}
+
+li {
+  margin-top: 15px;
 }
 

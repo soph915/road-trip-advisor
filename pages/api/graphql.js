@@ -11,6 +11,7 @@ const typeDefs = gql`
     id: String
     imageUrl: String
     description: String
+    numberOfStops: Int
     region: String
     stops: [stop]
   }

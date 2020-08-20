@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import queryGraphql from '../shared/query-graphql'
-import TripRow from '../components//TripInfo/TripRow'
+import TripRow from '../components/TripRow'
 import Head from 'next/head'
 import Layout from '../components/layout'
 import { useState } from 'react'
+import styles from '../styles/explore.module.css'
 
 const regions = [
   'All',
@@ -35,7 +36,7 @@ export default function Explore({ trips }) {
             <button onClick={() => setRegion(region)}>{region}</button>
           ))}
         </div>
-        <div>
+        <div className={styles.tripListContainer}>
           {trips.map((trip) => (
             <Link href="/trips/[id]" as={`/trips/${trip.id}`}>
               <div key={trip.id}>
@@ -45,6 +46,7 @@ export default function Explore({ trips }) {
                   name={trip.name} 
                   region={trip.region} 
                   imageUrl={trip.imageUrl}
+                  numberOfStops={trip.numberOfStops}
                 />
               </div>
             </Link>
@@ -63,6 +65,7 @@ export async function getStaticProps() {
         id
         region
         imageUrl
+        numberOfStops
       }
     }
   `)
