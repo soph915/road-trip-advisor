@@ -8,10 +8,6 @@ body {
   font-size: 18px;
 }
 
-/* * {
-  box-sizing: border-box;
-} */
-
 a {
   color: #0070f3;
   text-decoration: none;
@@ -23,9 +19,8 @@ a:hover {
 }
 
 img {
-  /* max-width: 100%; */
-  max-width: 36rem;
   display: block;
+  max-height: 100%;
 }
 
 button {
@@ -50,3 +45,7 @@ li {
   margin-top: 15px;
 }
 
+input {
+  width: 20rem;
+  height: 2rem;
+}

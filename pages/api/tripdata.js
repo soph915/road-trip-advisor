@@ -3,7 +3,7 @@ const trips = [
       description: 'Maine’s Route 1 road trip is as quintessential New England as the West Coast’s Route 1 drive is classic California. If you happen to be picking your kids up from a New England sleepaway camp at the end of the summer, it’s arguably a good time to tack on a family adventure. But, kid camp aside, the state’s coastline (secretly famous for being longer than California’s), is certainly worth going out your way to explore, and it’s stunning in the fall, too. ',
       name: "Classic Maine",
       id: 'classic-maine',
-      imageUrl: 'https://goop.com/wp-content/uploads/2016/07/maine-kennebunk2.jpg',
+      imageUrl: 'https://familytraveller.com/usa/wp-content/uploads/sites/2/2018/07/Portland-Head-Light-Maine.jpg',
       region: "Northeast",
       numberOfStops: 3,
       stops: [

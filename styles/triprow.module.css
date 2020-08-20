@@ -20,3 +20,13 @@
     font-weight: 600;
     font-size: 20px;
   }
+
+  .listImage {
+    width: 500px;
+    margin-right: 20px;
+  }
+
+  .listItemCopy {
+    align-items: center;
+    display: flex;
+  }

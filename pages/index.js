@@ -13,7 +13,7 @@ export default function Home() {
         <div className={indexStyles.textBody}>
           <h2 className={utilStyles.headingLg}>Road Trip Advisor</h2>
           <div>Want to take a road trip?</div>
-          <section className={utilStyles.headingMd}>Click one of the options below to start planning!</section>
+          <section className={utilStyles.headingMd}>Click below to start planning!</section>
           <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
             <Link href="explore">
               <button>
@@ -33,3 +33,4 @@ export default function Home() {
       </div>
     </div>
   )
+}

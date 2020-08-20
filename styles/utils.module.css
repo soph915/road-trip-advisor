@@ -42,42 +42,17 @@
     padding: 0;
     margin: 0;
   }
-  
-  .listItem {
-    cursor: pointer;
-    display: flex;
-    margin: 0 0 1.25rem;
-    width: 100%;
-    transition: .1s ease-in-out;
-  }
-
-  .listItem:hover {
-    transform: scale(1.005);
-  }
-
-  .listItem:active {
-    transform: scale(1.0);
-  }
 
   .lightText {
     color: #999;
+    margin-bottom: 15px;
   }
-
-  .tripImage { 
-    height: 400px;
-  }
-
-  .listImage {
-    width: 500px;
-    margin-right: 20px;
-  }
-
-  .listItemCopy {
-    align-items: center;
-    display: flex;
-  }
-
   
   .regionLink {
     margin-right: 10px;
+  }
+
+  .topImage { 
+    max-width: 50rem;
+    margin-bottom: 2rem;
   }

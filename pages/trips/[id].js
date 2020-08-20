@@ -1,7 +1,7 @@
 import queryGraphql from '../../shared/query-graphql'
 import utilStyles from '../../styles/utils.module.css'
 import Layout from '../../components/layout'
-
+import styles from '../../styles/tripinfo.module.css'
 
 export default function tripProfile({ trip }) {
   if (!trip) {
@@ -11,7 +11,7 @@ export default function tripProfile({ trip }) {
     <Layout>
       <div>
         <div>
-          <div className={utilStyles.tripImage}><img src={trip.imageUrl}></img></div>
+          <div><img src={trip.imageUrl} className={utilStyles.topImage}></img></div>
           <h1 className={utilStyles.headingXl}>{trip.name}</h1>
           <div className={utilStyles.lightText}>
             Number of Stops: {trip.stops.length}

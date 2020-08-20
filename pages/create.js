@@ -34,9 +34,13 @@ export default function Create({ }) {
 
   return (
     <Layout >
-      <div className={utilStyles.tripImage}><img src={'https://sgl-assets.imgix.net/files/article_hero/how-to-plan-trip-guide-aaa-via-magazine-shutterstock_446918872.jpg?w=1440&h=720&crop=faces,edges'}></img></div>
+      <div >
+        <img src={'https://sgl-assets.imgix.net/files/article_hero/how-to-plan-trip-guide-aaa-via-magazine-shutterstock_446918872.jpg?w=1440&h=720&crop=faces,edges'} className={utilStyles.topImage}>
+        </img>
+      </div>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Create a trip</h2>
+        <div className={utilStyles.lightText}>Enter road trip details below</div>
       </section>
       <div>Name</div>
         <input
